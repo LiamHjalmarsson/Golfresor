@@ -28,16 +28,44 @@ export default defineType({
             type: "boolean",
         },
         {
-            name: 'image',
-            title: 'Header',
-            type: 'image',
-            validation: (Rule) => Rule.required(),
-        },
-        {
-            name: "headerInfo",
-            title: "Header Text som finns med i bilden",
-            type: "string",
-            validation: (Rule) => Rule.required(),
+            name: 'headerImages',
+            type: 'array',
+            title: 'Bilder',
+            of: [
+                {
+                    name: 'imageItem',
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'image',
+                            title: 'Bild',
+                            type: 'image',
+                            options: {
+                                hotspot: true,
+                                metadata: ['lqip', 'palette', 'blurhash'],
+                            },
+                            fields: [
+                                {
+                                    name: 'alt',
+                                    type: 'string',
+                                    title: 'Alternativ text',
+                                    description: 'Beskrivande text för bilden',
+                                },
+                            ],
+                        },
+                        {
+                            name: 'title',
+                            type: 'string',
+                            title: 'Rubrik',
+                        },
+                        {
+                            name: 'headerInfo',
+                            type: 'string',
+                            title: 'Text',
+                        },
+                    ],
+                },
+            ],
         },
         {
             name: "cardInfoText",

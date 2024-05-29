@@ -21,7 +21,7 @@ const Hotels = ({ title, subTitle }) => {
             </div>
 
             {
-                data && <Favorites data={data} path="hotels/" />
+                // data && <Favorites data={data} path="hotels/" />
             }
 
 

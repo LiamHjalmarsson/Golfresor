@@ -4,6 +4,7 @@ import { urlFor } from '../../../client';
 import { MdArrowForwardIos } from 'react-icons/md';
 
 const FavoriteCard = ({ path, title, text, image }) => {
+
     return (
         <Link to={`/${path}`} className='group relative cursor-pointer flex flex-col'>
             <div className='h-60 md:h-72 lg:h-80'>

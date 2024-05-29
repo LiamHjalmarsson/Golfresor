@@ -1,4 +1,5 @@
 import { DocumentTextIcon } from '@sanity/icons';
+import { title } from 'process';
 
 export default {
     name: 'hotel',
@@ -19,20 +20,33 @@ export default {
             }
         },
         {
-            name: 'image',
-            title: 'Bild',
-            type: 'image',
-            options: {
-                hotspot: true,
-                metadata: ['lqip', 'palette', 'blurhash'],
-            },
-            fields: [
+            name: 'headerImages',
+            type: 'array',
+            title: 'Bilder',
+            of: [
                 {
-                    name: 'alt',
-                    type: 'string',
-                    title: 'Alternativ text',
-                    description: 'Beskrivande text för bilden'
-                }
+                    name: 'imageItem',
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'image',
+                            title: 'Bild',
+                            type: 'image',
+                            options: {
+                                hotspot: true,
+                                metadata: ['lqip', 'palette', 'blurhash'],
+                            },
+                            fields: [
+                                {
+                                    name: 'alt',
+                                    type: 'string',
+                                    title: 'Alternativ text',
+                                    description: 'Beskrivande text för bilden',
+                                },
+                            ],
+                        },
+                    ],
+                },
             ],
         },
         {

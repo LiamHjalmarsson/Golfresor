@@ -9,6 +9,7 @@ const Countries = ({ subTitle, title }) => {
 
     let { data } = useFetch(pathname !== ("/") ? '*[_type == "country"]' : '*[_type == "country" && popular == true]');
 
+    console.log(data);
     return (
         <div className='flex flex-col gap-12'>
             <div className="px-4 text-center">
