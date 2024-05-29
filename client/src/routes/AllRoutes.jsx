@@ -5,7 +5,6 @@ import Destinations from "../pages/destinations/Destinations";
 import About from "../pages/about/About";
 import Destination from "../pages/destination/Destination";
 import Hotel from "../pages/hotel/Hotel";
-import path from "path";
 
 const routes = [
     {

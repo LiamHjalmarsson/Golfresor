@@ -28,7 +28,7 @@ const Links = ({ open, openHandler }) => {
                 }
             </ul>
 
-            <div className={`${open ? "translate-x-0" : "-translate-x-full"} transition duration-300 lg:hidden fixed h-full w-full top-32 right-0 bg-stone-200`}>
+            <div className={`${open ? "translate-x-0" : "-translate-x-full"} transition duration-300 lg:hidden fixed h-full w-full top-32 right-0 bg-stone-100`}>
                 <ul className={`flex flex-col justify-between items-center`}>
                     {
                         links.map((link, index) => (
