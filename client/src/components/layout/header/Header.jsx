@@ -11,7 +11,7 @@ const Header = () => {
     let [searchTerm, setSearchTerm] = useState("");
     let [open, setOpen] = useState(false);
 
-    let { data: countries } = useFetch(`*[_type == "country"]`);
+    let { data } = useFetch(`*[_type == "country"]`);
 
     let searchHandler = () => {
         setSearch(!search);
@@ -35,7 +35,7 @@ const Header = () => {
 
     return (
         <header className='w-full relative z-50'>
-            <nav className='flex h-32 overflow-hidden w-full items-center px-4 lg:px-10 transition duration-300 justify-between relative text-primary'>
+            <nav className='flex h-32 w-full items-center px-4 lg:px-10 transition duration-300 justify-between relative border-stone-300 border-b overflow-hidden'>
 
                 <NavLink to="/" className="w-full lg:w-48 order-2 lg:order-1 z-10">
                     <h1 className="text-2xl tracking-wide md:text-4xl font-bold max-lg:text-center">
@@ -43,7 +43,7 @@ const Header = () => {
                     </h1>
                 </NavLink>
 
-                <Links />
+                <Links open={open} openHandler={() => {setOpen(false)}}  />
 
                 <div className="flex items-center justify-end z-20 order-3 p-4 cursor-pointer" onClick={searchHandler}>
                     <FaSearch className={`text-xl font-bold `} />
@@ -54,7 +54,7 @@ const Header = () => {
 
             <Search
                 open={search}
-                countries={countries}
+                countries={data}
                 handleSearch={handleSearch}
                 searchTerm={searchTerm}
                 close={onClickClose}

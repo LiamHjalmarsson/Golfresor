@@ -7,12 +7,17 @@ const Contact = () => {
                 Kontakta
             </h2>
             <ul className="text-xs lg:text-sm">
-                <li className="mb-2">
+                <li className="mb-4 lg:mb-2">
                     <a href="tel:">
                         Telefon: +46767675775
                     </a>
                 </li>
-                <li className="mb-2">
+                <li className="mb-4 lg:mb-2">
+                    <a href='mailto:'>
+                        E-mail: liam.hjalmarssons@gmail.com
+                    </a>
+                </li>
+                <li className="mb-4 lg:mb-2">
                     <a href='mailto:'>
                         E-mail: liam.hjalmarssons@gmail.com
                     </a>

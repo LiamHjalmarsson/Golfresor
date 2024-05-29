@@ -36,7 +36,7 @@ export default defineType({
                             title: 'Rubrik',
                         },
                         {
-                            name: 'description',
+                            name: 'headerInfo',
                             type: 'string',
                             title: 'Text',
                         },

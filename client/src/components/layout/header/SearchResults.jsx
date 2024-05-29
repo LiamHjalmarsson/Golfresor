@@ -9,7 +9,7 @@ const SearchResult = ({ countries, close }) => {
                 countries.length > 0 && (
                     <>
                         {countries.map(country => (
-                            <NavLink to={`/destinationer/${country.slug.current}`} key={country._id} className="group flex h-16 md:h-24 justify-between gap-12 p-4 items-center text-primary cursor-pointer" onClick={close}>
+                            <NavLink to={`/destinationer/${country.slug.current}`} key={country._id} className="group flex h-16 md:h-24 justify-between gap-12 p-4 items-center cursor-pointer" onClick={close}>
                                 <div className="text-sm md:text-base lg:text-lg font-semibold py-2 group-hover:translate-x-5 duration-300 transition-transform truncate">
                                     {country.title.toUpperCase().slice(0, 1) + country.title.slice(1)}
                                 </div>
