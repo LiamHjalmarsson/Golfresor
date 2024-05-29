@@ -28,15 +28,14 @@ const Links = ({ open, openHandler }) => {
                 }
             </ul>
 
-            <div className={`${open ? "translate-x-0" : "-translate-x-full"} transition duration-300 lg:hidden fixed h-full w-full top-28 right-0 `}>
+            <div className={`${open ? "translate-x-0" : "-translate-x-full"} transition duration-300 lg:hidden fixed h-full w-full top-32 right-0 bg-stone-200`}>
                 <ul className={`flex flex-col justify-between items-center`}>
                     {
                         links.map((link, index) => (
-                            <li key={index} className='p-8 cursor-pointer w-full text-center'>
+                            <li key={index} className='p-8 cursor-pointer w-full text-center' onClick={openHandler}>
                                 <Link
                                     href={link.href}
                                     name={link.name}
-                                    click={openHandler}
                                 />
                             </li>
                         ))

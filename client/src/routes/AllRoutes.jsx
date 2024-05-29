@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
 import Home from "../pages/home/Home";
+import Destinations from "../pages/destinations/Destinations";
+import About from "../pages/about/About";
 
 const routes = [
     {
@@ -10,6 +12,14 @@ const routes = [
             {
                 index: true,
                 element: <Home />
+            },
+            {
+                path: "destinationer",
+                element: <Destinations />
+            },
+            {
+                path: "omoss",
+                element: <About />
             }
         ]
     },

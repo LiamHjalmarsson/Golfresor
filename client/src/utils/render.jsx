@@ -5,6 +5,7 @@ import Countries from '../components/Favorite/Countries';
 import Hotels from '../components/Favorite/Hotels';
 import Deals from '../components/deal/Deals';
 import Contact from '../components/contact/Contact';
+import Text from '../components/text/Text';
 
 const renderComponent = (component) => {
     switch (component._type) {
@@ -18,6 +19,8 @@ const renderComponent = (component) => {
             return renderOffer(component);
         case "offertComponent":
             return renderContact(component);
+        case "textComponent":
+            return renderText(component);
         default:
             return null;
     }
@@ -70,4 +73,10 @@ let renderContact = (component) => {
     let { title, description, buttonText, image } = component;
 
     return <Contact title={title} description={description} buttonText={buttonText} image={image} />
+}
+
+let renderText = (component) => {
+    let { title, subTitle, description } = component;
+
+    return <Text title={title} subTitle={subTitle} text={description} />
 }
