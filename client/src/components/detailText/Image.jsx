@@ -2,6 +2,7 @@ import React from 'react';
 import { urlFor } from '../../client';
 
 const Image = ({ image, bottomText }) => {
+
     return (
         <div className="relative w-full md:w-1/2 max-md:mt-12">
             <img src={urlFor(image).url()} className="h-60 md:h-full w-full object-cover object-center" />
