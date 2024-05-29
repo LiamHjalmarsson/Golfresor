@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
-import Section from '../layout/section/Section';
 import Heading from '../heading/Heading';
 import Favorites from './components/Favorites';
 
@@ -17,7 +16,7 @@ const Countries = ({ subTitle, title }) => {
             </div>
     
             {
-                data && <Favorites data={data} />
+                data && <Favorites data={data} path="destinationer/" />
             }
 
         </div>
