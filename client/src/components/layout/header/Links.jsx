@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import Link from './Link';
 
 const links = [
     {
@@ -13,17 +13,16 @@ const links = [
 ];
 
 const Links = ({ open, openHandler }) => {
-    let { pathname } = useLocation();
-
     return (
         <>
             <ul className="hidden absolute justify-center items-center w-full gap-8 flex-grow lg:flex order-2">
                 {
                     links.map((link, index) => (
-                        <li key={index} className=''>
-                            <NavLink to={`/${link.href}`} className={`${link.href === pathname.slice(1) ? "text-orange border-b border-b-orange" : ""} hover:border-b text-xl`}>
-                                {link.name}
-                            </NavLink>
+                        <li key={index}>
+                            <Link
+                                href={link.href}
+                                name={link.name}
+                            />
                         </li>
                     ))
                 }
@@ -33,9 +32,13 @@ const Links = ({ open, openHandler }) => {
                 <ul className={`flex flex-col justify-between items-center gap-8 pt-4`}>
                     {
                         links.map((link, index) => (
-                            <NavLink to={`/${link.href}`} className={`text-center p-4 w-full uppercase text-lg font-bold tracking-wider transition-colors duration-300`} key={index} onClick={openHandler}>
-                                {link.name}
-                            </NavLink>
+                            <li key={index}>
+                                <Link
+                                    href={link.href}
+                                    name={link.name}
+                                    click={openHandler}
+                                />
+                            </li>
                         ))
                     }
                 </ul>

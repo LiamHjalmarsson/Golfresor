@@ -15,7 +15,7 @@ export default {
         orange: "#FFA500 "
       },
       boxShadow: {
-        middle: "0 0px 6px 0px",
+        middle: "0 0px 5px -2px",
       },
       fontFamily: {
         
