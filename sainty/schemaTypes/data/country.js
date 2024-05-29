@@ -104,7 +104,7 @@ export default defineType({
     preview: {
         select: {
             title: 'title',
-            image: 'image',
+            media: 'headerImages.0.image',
         },
         prepare(selection) {
             let { title, image } = selection;

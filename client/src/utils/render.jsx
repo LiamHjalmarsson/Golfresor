@@ -54,12 +54,12 @@ let renderDetailText = (component) => {
 }
 
 let renderContent = (component) => {
-    let { title, subTitle } = component;
+    let { title, subTitle, description } = component;
 
     if (component.contentToDisplay === "country") {
-        return <Countries title={title} subTitle={subTitle} />
+        return <Countries title={title} subTitle={subTitle} text={description} />
     } else {
-        return <Hotels title={title} subTitle={subTitle} />
+        return <Hotels title={title} subTitle={subTitle} text={description} />
     }
 }
 

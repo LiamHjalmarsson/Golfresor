@@ -3,8 +3,9 @@ import Root from "../pages/Root";
 import Home from "../pages/home/Home";
 import Destinations from "../pages/destinations/Destinations";
 import About from "../pages/about/About";
-import path from "path";
 import Destination from "../pages/destination/Destination";
+import Hotel from "../pages/hotel/Hotel";
+import path from "path";
 
 const routes = [
     {
@@ -24,9 +25,22 @@ const routes = [
                     },
                     {
                         path: ":slug",
-                        element: <Destination />
+                        children: [
+                            {
+                                index: true,
+                                element: <Destination />
+                            },
+                            {
+                                path: ":slug",
+                                element: <Hotel />
+                            }
+                        ]
                     }
                 ]
+            },
+            {
+                path: "hotels/:slug",
+                element: <Hotel />
             },
             {
                 path: "omoss",

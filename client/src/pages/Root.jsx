@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 const Root = () => {
     return (
-        <div className='text-primary bg-stone-200'>
+        <div className='text-primary bg-stone-100'>
             <Header />
 
             <main className='min-h-[75vh]'>

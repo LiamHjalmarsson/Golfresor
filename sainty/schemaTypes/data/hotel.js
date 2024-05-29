@@ -1,5 +1,4 @@
 import { DocumentTextIcon } from '@sanity/icons';
-import { title } from 'process';
 
 export default {
     name: 'hotel',
@@ -21,8 +20,8 @@ export default {
         },
         {
             name: 'headerImages',
+            title: 'Header Bilder',
             type: 'array',
-            title: 'Bilder',
             of: [
                 {
                     name: 'imageItem',
@@ -284,17 +283,4 @@ export default {
             type: "boolean",
         }
     ],
-    preview: {
-        select: {
-            title: 'title',
-            image: 'image',
-        },
-        prepare(selection) {
-            const { title, image } = selection;
-            return {
-                title: title || 'No Title',
-                media: image || DocumentTextIcon,
-            };
-        },
-    },
 };

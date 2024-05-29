@@ -16,6 +16,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'description',
+            title: 'Text',
+            type: 'text',
+        },
+        {
             name: 'contentToDisplay',
             type: 'string',
             title: "Välj innehåll som ska visas",
