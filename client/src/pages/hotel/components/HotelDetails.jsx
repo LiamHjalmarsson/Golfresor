@@ -2,8 +2,11 @@ import React from 'react';
 import Heading from '../../../components/heading/Heading';
 import Button from '../../../components/elements/Button';
 import DetailsIcons from './DetailsIcons';
+import { useOutletContext } from 'react-router-dom';
 
 const HotelDetails = ({ subTitle, title, iconWithText, nights, price, description }) => {
+    let { handleModal } = useOutletContext();
+
     return (
         <div className='flex-grow lg:h-96 lg:max-w-lg flex flex-col justify-center items-center px-6'>
             <div className="text-center">
@@ -22,7 +25,7 @@ const HotelDetails = ({ subTitle, title, iconWithText, nights, price, descriptio
                 {description}
             </div>
 
-            <Button>
+            <Button onClick={handleModal}>
                 Kontakta
             </Button>
         </div>

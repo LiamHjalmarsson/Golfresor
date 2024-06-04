@@ -11,6 +11,7 @@ const DetailText = ({ subTitle, title, description, path, buttonText, image, bot
                 buttonText={buttonText}
                 title={title}
                 subTitle={subTitle} 
+                path={path}
             />
 
             <Image image={image} bottomText={bottomText} />

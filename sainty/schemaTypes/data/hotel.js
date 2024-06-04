@@ -44,7 +44,6 @@ export default {
                                     description: 'Beskrivande text för bilden',
                                 },
                             ],
-                            validation: (Rule) => Rule.required(),
                         },
                     ],
                 },

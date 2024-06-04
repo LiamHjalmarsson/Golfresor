@@ -8,7 +8,7 @@ const Deal = ({ name, image, description, reference }) => {
     return (
         <Link to={linkUrl} className="group md:max-w-lg md:w-1/4 flex-grow h-60 md:h-72 lg:h-80 relative flex justify-center items-end text-start">
             <div className='overflow-hidden h-full w-full '>
-                <img src={urlFor(image).url()} className=' object-cover object-center opacity-90 group-hover:opacity-85 w-full h-full transition duration-300 transform group-hover:scale-110' />
+                <img src={urlFor(image).width(600).url()} className=' object-cover object-center opacity-90 group-hover:opacity-85 w-full h-full transition duration-300 transform group-hover:scale-110' />
             </div>
 
             <div className="absolute -bottom-4 left-0 right-0 px-6 lg:px-12 flex justify-center">

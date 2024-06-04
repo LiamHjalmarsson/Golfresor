@@ -18,7 +18,7 @@ const Destination = () => {
     let countryHotels = hotels ? hotels.filter(hotel => hotel.country?._ref === countryId) : [];
 
     return (
-        <Section>
+        <Section custom={"lg:gap-24 gap-12"}>
             {
                 data && (
                     <>

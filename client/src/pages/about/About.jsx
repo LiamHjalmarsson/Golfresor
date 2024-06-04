@@ -7,7 +7,7 @@ const About = () => {
     let { data } = useFetch(`*[_type == "page" && title == "Om oss"][0]`);
 
     return (
-        <Section>
+        <Section custom={"lg:gap-24 gap-12"}>
             {
                 data?.components.map((component, index) => (
                     <div key={index}>

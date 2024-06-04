@@ -7,7 +7,7 @@ const ImagesDisplay = ({ images, handleImageClick, selectedImage }) => {
         <div className="w-full lg:w-1/2">
             <div className="w-full flex flex-col relative gap-4">
                 <img
-                    src={selectedImage ? urlFor(selectedImage.asset).url() : urlFor(images[0].asset).url()}
+                    src={selectedImage ? urlFor(selectedImage.asset).width(600).url() : urlFor(images[0].asset).width(600).url()}
                     className="object-cover object-center opacity-95 w-full h-96"
                     alt="Selected"
                 />

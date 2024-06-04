@@ -2,7 +2,7 @@ import React from 'react';
 
 const Section = ({ custom, children }) => {
     return (
-        <section className={`${custom ? custom : ""} flex flex-col gap-12 lg:gap-24`}>
+        <section className={`flex flex-col ${custom ? custom : "gap-24 lg:gap-48"}`}>
             {children}
         </section>
     );

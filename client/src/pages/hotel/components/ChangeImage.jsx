@@ -8,7 +8,7 @@ const ChangeImage = ({ images, selectedImage, handleImageClick }) => {
                 images.map(image => (
                     <img
                         key={image._key}
-                        src={urlFor(image.asset).url()}
+                        src={urlFor(image.asset).width(100).url()}
                         alt={image.alt}
                         className={`w-16 h-16 object-cover cursor-pointer shadow-sm transition-transform ${selectedImage && image._key === selectedImage._key ? "transform scale-110" : ""}`}
                         onClick={() => handleImageClick(image)}
