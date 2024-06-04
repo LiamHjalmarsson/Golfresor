@@ -11,7 +11,7 @@ const HeroText = ( { title, text, index, currentIndex }) => {
 
                 {
                     text && (
-                        <p className="max-w-md leading-relaxed text-base lg:text-lg line-clamp-2 lg:line-clamp-4">
+                        <p className="max-w-md leading-relaxed text-lg lg:text-xl line-clamp-2 lg:line-clamp-4">
                             {text}
                         </p>
                     )

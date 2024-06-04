@@ -16,6 +16,7 @@ const Hotel = () => {
         setSelectedImage(image);
     };
 
+    console.log(data);
     return (
         <Section>
             {
@@ -35,11 +36,12 @@ const Hotel = () => {
                                 nights={data.nights}
                                 price={data.price}
                                 description={data.description}
-
                             />
                         </div>
 
-                        <Icons icons={data.detailIcons} />
+                        {
+                            data.icons && <Icons icons={data.detailIcons} />
+                        }
 
                         <DetailCards cards={data.textBoxes} />
                     </>

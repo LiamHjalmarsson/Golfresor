@@ -10,8 +10,9 @@ const HotelDetails = ({ subTitle, title, iconWithText, nights, price, descriptio
                 <Heading subTitle={subTitle.toUpperCase().slice(0, 1) + subTitle.slice(1)} title={title} />
             </div>
 
-
-            <DetailsIcons icons={iconWithText} />
+            {
+                iconWithText && <DetailsIcons icons={iconWithText} />
+            }
 
             <h3 className='mb-4 text-base font-semibold'>
                 {nights + " nätter från SEK " + price}

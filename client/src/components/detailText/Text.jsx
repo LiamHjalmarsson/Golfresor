@@ -1,8 +1,11 @@
 import React from 'react';
 import Heading from '../heading/Heading';
 import Button from '../elements/Button';
+import { useOutletContext } from 'react-router-dom';
 
 const Text = ({ description, buttonText, title, subTitle }) => {
+    let { handleModal } = useOutletContext();
+
     return (
         <div className='w-full md:w-1/2 flex flex-col px-6 md:p-6 justify-center items-center md:items-start text-center md:text-start gap-6'>
 
@@ -13,8 +16,9 @@ const Text = ({ description, buttonText, title, subTitle }) => {
             </p>
 
             {
-                buttonText && <Button>{buttonText}</Button>
+                buttonText && <Button onClick={handleModal}>{buttonText}</Button>
             }
+
         </div>
     );
 }

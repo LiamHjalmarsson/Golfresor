@@ -10,7 +10,6 @@ import dealComponent from "./components/dealComponent";
 import dealsComponent from "./components/dealsComponent";
 import offertComponent from "./components/offertComponent";
 import contentComponent from "./components/contentComponent";
-import booking from "./data/booking";
 import formComponent from "./components/formComponent";
 import formFieldComponent from "./components/formFieldComponent";
 
@@ -28,5 +27,4 @@ export const schemaTypes = [
     
     country, 
     hotel, 
-    booking
 ];

@@ -3,6 +3,8 @@ import HotelCard from './HotelCard';
 import SecondaryHeading from '../../../components/heading/SecondaryHeading';
 
 const HotelsDestinations = ({ countryHotels, text }) => {
+
+    console.log(countryHotels);
     return (
         <div className='text-center'>
             <div className='mb-6 lg:mb-12 text-center'>
@@ -23,7 +25,7 @@ const HotelsDestinations = ({ countryHotels, text }) => {
                         <HotelCard
                             key={index}
                             path={`${hotel.slug.current}`}
-                            image={hotel.image}
+                            image={hotel.headerImages[0].image}
                             title={hotel.title}
                             info={"Priser från SEK " + hotel.price + " / " + hotel.nights + " Nätter "}
                         />

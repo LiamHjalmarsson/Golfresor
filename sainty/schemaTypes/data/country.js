@@ -44,6 +44,7 @@ export default defineType({
                                 hotspot: true,
                                 metadata: ['lqip', 'palette', 'blurhash'],
                             },
+                            validation: (Rule) => Rule.required(),
                             fields: [
                                 {
                                     name: 'alt',
@@ -52,11 +53,13 @@ export default defineType({
                                     description: 'Beskrivande text för bilden',
                                 },
                             ],
+                            validation: (Rule) => Rule.required(),
                         },
                         {
                             name: 'title',
                             type: 'string',
                             title: 'Rubrik',
+                            validation: (Rule) => Rule.required(),
                         },
                         {
                             name: 'headerInfo',
@@ -66,6 +69,7 @@ export default defineType({
                     ],
                 },
             ],
+            validation: (Rule) => Rule.required(),
         },
         {
             name: "cardInfoText",
@@ -90,28 +94,16 @@ export default defineType({
             title: 'Text om hotel och resort',
             type: 'string',
         },
-        {
-            name: 'Otherimages',
-            title: 'Fler bilder för landet',
-            type: 'array',
-            of: [
-                {
-                    type: "image"
-                }
-            ],
-        },
     ],
     preview: {
         select: {
+            image: 'headerImages.0.image.asset',
             title: 'title',
-            media: 'headerImages.0.image',
         },
-        prepare(selection) {
-            let { title, image } = selection;
-
+        prepare({ image, title }) {
             return {
-                title: title || 'No Title',
-                media: image || DocumentTextIcon,
+                media: image,
+                title,
             };
         },
     },

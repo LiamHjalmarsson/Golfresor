@@ -12,7 +12,7 @@ export default {
         accent: "00FFFF",
         red: "#F5B7B7",
         green: "#7DBE6C",
-        orange: "#FFA500 "
+        orange: "#9c6104 "
       },
       boxShadow: {
         middle: "0 0px 5px -2px",

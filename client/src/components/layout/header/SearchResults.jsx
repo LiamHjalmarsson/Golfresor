@@ -4,7 +4,7 @@ import { urlFor } from '../../../client';
 
 const SearchResult = ({ countries, close }) => {
     return (
-        <div className="absolute top-16 md:top-28 left-0 right-0 max-w-xl mx-auto p-4 md:rounded-md shadow-lg">
+        <div className="absolute top-16 md:top-28 left-0 right-0 max-w-xl mx-auto p-4 md:rounded-md shadow-lg bg-white bg-opacity-90">
             {
                 countries.length > 0 && (
                     <>
@@ -14,7 +14,7 @@ const SearchResult = ({ countries, close }) => {
                                     {country.title.toUpperCase().slice(0, 1) + country.title.slice(1)}
                                 </div>
                                 <div className="w-16 md:w-24 h-full">
-                                    <img src={urlFor(country.image).url()} className="h-full w-full object-cover" />
+                                    <img src={urlFor(country.headerImages[0].image).url()} className="h-full w-full object-cover" />
                                 </div>
                             </NavLink>
                         ))}

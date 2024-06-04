@@ -2,8 +2,11 @@ import React from 'react';
 import { urlFor } from '../../client';
 import PrimaryHeading from '../heading/PrimaryHeading';
 import Button from '../elements/Button';
+import { useOutletContext } from 'react-router-dom';
 
 const Contact = ({ title, description, buttonText, image }) => {
+    let { handleModal } = useOutletContext();
+
     return (
         <div className='w-full h-[400px] md:h-[500px] max-w-7xl mx-auto flex justify-center items-center flex-col md:flex-row relative shadow-lg'>
             <img src={urlFor(image).url()} className='max-md:absolute object-cover object-center opacity-90 w-full h-full' />
@@ -15,7 +18,7 @@ const Contact = ({ title, description, buttonText, image }) => {
                     }
                 </p>
                 <div className="w-full flex justify-center">
-                    <Button>
+                    <Button onClick={handleModal}>
                         {buttonText}
                     </Button>
                 </div>

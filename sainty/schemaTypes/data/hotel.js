@@ -20,8 +20,8 @@ export default {
         },
         {
             name: 'headerImages',
-            title: 'Header Bilder',
             type: 'array',
+            title: 'Bilder',
             of: [
                 {
                     name: 'imageItem',
@@ -35,6 +35,7 @@ export default {
                                 hotspot: true,
                                 metadata: ['lqip', 'palette', 'blurhash'],
                             },
+                            validation: (Rule) => Rule.required(),
                             fields: [
                                 {
                                     name: 'alt',
@@ -43,6 +44,7 @@ export default {
                                     description: 'Beskrivande text för bilden',
                                 },
                             ],
+                            validation: (Rule) => Rule.required(),
                         },
                     ],
                 },
@@ -68,19 +70,6 @@ export default {
                     ],
                 }
             ],
-            preview: {
-                select: {
-                    alt: 'alt',
-                    image: 'image',
-                },
-                prepare(selection) {
-                    const { alt, image } = selection;
-                    return {
-                        title: alt || 'No alt',
-                        media: image || DocumentTextIcon,
-                    };
-                },
-            },
         },
         {
             name: "nights",
@@ -283,4 +272,16 @@ export default {
             type: "boolean",
         }
     ],
+    preview: {
+        select: {
+            image: 'headerImages.0.image.asset',
+            title: 'title',
+        },
+        prepare({ image, title }) {
+            return {
+                media: image,
+                title,
+            };
+        },
+    },
 };
