@@ -20,30 +20,22 @@ export default {
         },
         {
             name: 'headerImages',
-            type: 'array',
             title: 'Bilder',
+            type: 'array',
             of: [
                 {
-                    name: 'imageItem',
-                    type: 'object',
+                    type: 'image',
+                    options: {
+                        hotspot: true,
+                        metadata: ['lqip', 'palette', 'blurhash'],
+                    },
+                    validation: (Rule) => Rule.required(),
                     fields: [
                         {
-                            name: 'image',
-                            title: 'Bild',
-                            type: 'image',
-                            options: {
-                                hotspot: true,
-                                metadata: ['lqip', 'palette', 'blurhash'],
-                            },
-                            validation: (Rule) => Rule.required(),
-                            fields: [
-                                {
-                                    name: 'alt',
-                                    type: 'string',
-                                    title: 'Alternativ text',
-                                    description: 'Beskrivande text för bilden',
-                                },
-                            ],
+                            name: 'alt',
+                            type: 'string',
+                            title: 'Alternativ text',
+                            description: 'Beskrivande text för bilden',
                         },
                     ],
                 },
