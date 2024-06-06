@@ -6,7 +6,7 @@ const HeroText = ( { title, text, index, currentIndex }) => {
             <div className="max-w-3xl text-start lg:text-center text-stone-50 px-8 pb-8">
 
                 <h1 className="font-bold text-4xl md:text-5xl lg:text-7xl mb-2 lg:mb-6">
-                    {title}
+                    {title.toUpperCase().slice(0, 1) + title.slice(1)}
                 </h1>
 
                 {

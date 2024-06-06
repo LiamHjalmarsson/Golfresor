@@ -19,6 +19,18 @@ export default {
             name: 'image',
             title: 'Bild',
             type: 'image',
+            options: {
+                hotspot: true,
+                metadata: ['lqip', 'palette', 'blurhash'],
+            },
+            fields: [
+                {
+                    name: 'alt',
+                    type: 'string',
+                    title: 'Alternativ text',
+                    description: 'Beskrivande text för bilden',
+                },
+            ],
         },
         {
             name: 'reference',

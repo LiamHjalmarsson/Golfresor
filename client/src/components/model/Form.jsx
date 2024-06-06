@@ -1,30 +1,43 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 import Button from '../elements/Button';
 import InputRow from '../elements/InputRow';
 
 const Form = ({ close }) => {
+    let form = useRef();
+
+    let sendEmail = async (e) => {
+        e.preventDefault();
+        await emailjs.sendForm('service_bx2imh9', 'template_qtj543b', form.current, 'mcrKYJtLl9odWjGFq');
+
+        form.current.reset();
+
+        close();
+    };
+
     return (
-        <form>
+        <form ref={form} onSubmit={sendEmail} >
             <InputRow
                 input={{
                     id: "name",
                     name: "name",
                     type: "text",
-                }}  
+                }}
             />
             <InputRow
                 input={{
                     id: "email",
                     name: "email",
                     type: "email",
-                }}  
+                }}
             />
             <InputRow
                 input={{
                     id: "message",
                     name: "message",
                     type: "text",
-                }}  
+                }}
                 msg={true}
             />
 

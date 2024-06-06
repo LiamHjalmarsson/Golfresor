@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { urlFor } from '../../../client';
 import { MdArrowForwardIos } from 'react-icons/md';
 
-const FavoriteCard = ({ path, title, text, image }) => {
+const FavoriteCard = ({ path, title, text, image, alt }) => {
     return (
         <Link to={`/${path}`} className='group relative cursor-pointer flex flex-col shadow-xl'>
             <div className='h-60 md:h-72 lg:h-80'>
                 <div className='overflow-hidden h-full w-full '>
-                    <img src={urlFor(image.asset).width(600).url()} className=' object-cover object-center opacity-90 group-hover:opacity-85 w-full h-full transition duration-300 transform group-hover:scale-110' />
+                    <img src={urlFor(image.asset).width(600).url()} className=' object-cover object-center opacity-90 group-hover:opacity-85 w-full h-full transition duration-300 transform group-hover:scale-110' alt={alt} />
                 </div>
             </div>
 

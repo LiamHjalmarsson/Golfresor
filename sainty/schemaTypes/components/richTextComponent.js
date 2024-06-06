@@ -25,25 +25,37 @@ export default defineType({
             name: 'link',
             title: 'Länk',
             type: 'string',
-            description: "länk vart knappen ska gå till" 
+            description: "länk vart knappen ska gå till"
         },
         {
             name: 'buttonText',
             title: 'Knapp Text',
             type: 'string',
-            description: "Text som visas i knappen" 
+            description: "Text som visas i knappen"
         },
         {
             name: 'image',
             title: 'Image',
             type: 'image',
-            description: "Välj en bild" 
+            description: "Välj en bild",
+            options: {
+                hotspot: true,
+                metadata: ['lqip', 'palette', 'blurhash'],
+            },
+            fields: [
+                {
+                    name: 'alt',
+                    type: 'string',
+                    title: 'Alternativ text',
+                    description: 'Beskrivande text för bilden',
+                },
+            ],
         },
         {
             name: 'imageText',
             title: 'Bild Text',
             type: 'string',
-            description: "Välj en text som visas i botten av kortet" 
+            description: "Välj en text som visas i botten av kortet"
         },
     ],
     icon: DocumentTextIcon,
