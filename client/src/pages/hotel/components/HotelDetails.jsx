@@ -9,7 +9,7 @@ const HotelDetails = ({ subTitle, title, iconWithText, nights, price, descriptio
 
     return (
         <div className='flex-grow lg:h-96 lg:max-w-lg flex flex-col justify-center items-center px-6'>
-            <div className="text-center">
+            <div className="text-center mb-4">
                 <Heading subTitle={subTitle.toUpperCase().slice(0, 1) + subTitle.slice(1)} title={title} />
             </div>
 
@@ -17,11 +17,11 @@ const HotelDetails = ({ subTitle, title, iconWithText, nights, price, descriptio
                 iconWithText && <DetailsIcons icons={iconWithText} />
             }
 
-            <h3 className='mb-4 text-base font-semibold'>
+            <h3 className='my-4 text-base font-semibold'>
                 {nights + " nätter från SEK " + price}
             </h3>
 
-            <div className='mb-8 text-center text-xs md:text-sm px-8'>
+            <div className='mt-4 mb-8 text-center text-xs md:text-sm px-8'>
                 {description}
             </div>
 

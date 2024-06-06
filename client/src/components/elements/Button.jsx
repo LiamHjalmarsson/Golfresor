@@ -5,7 +5,7 @@ const Button = ({ children, onClick, type }) => {
         <button
             type={type ? type : "button"}
             onClick={onClick ? onClick : () => { }}
-            className='text-center text-lg lg:text-xl w-fit font-bold text-primary py-4 px-12 lg:px-8 bg-green tracking-wide duration-300 transition rounded-md hover:bg-opacity-90'
+            className='text-center text-lg lg:text-xl w-fit font-bold text-stone-50 py-4 px-12 lg:px-8 bg-green tracking-wide duration-300 transition rounded-md hover:bg-opacity-90'
         >
             {children}
         </button>

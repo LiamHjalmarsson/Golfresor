@@ -19,26 +19,26 @@ export default {
             }
         },
         {
-            name: 'headerImages',
-            title: 'Bilder',
-            type: 'array',
-            of: [
+            name: 'cardImage',
+            title: 'Bild för kort',
+            type: 'image',
+            options: {
+                hotspot: true,
+                metadata: ['lqip', 'palette', 'blurhash'],
+            },
+            validation: (Rule) => Rule.required(),
+            fields: [
                 {
-                    type: 'image',
-                    options: {
-                        hotspot: true,
-                        metadata: ['lqip', 'palette', 'blurhash'],
-                    },
-                    validation: (Rule) => Rule.required(),
-                    fields: [
-                        {
-                            name: 'alt',
-                            type: 'string',
-                            title: 'Alternativ text',
-                            description: 'Beskrivande text för bilden',
-                        },
-                    ],
+                    name: 'alt',
+                    type: 'string',
+                    title: 'Alternativ text',
+                    description: 'Beskrivande text för bilden',
                 },
+                {
+                    name: "description",
+                    title: 'Description',
+                    type: 'string',
+                }
             ],
         },
         {
@@ -265,7 +265,7 @@ export default {
     ],
     preview: {
         select: {
-            image: 'headerImages.0.image.asset',
+            image: 'cardImage',
             title: 'title',
         },
         prepare({ image, title }) {

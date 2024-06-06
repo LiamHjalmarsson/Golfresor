@@ -17,7 +17,7 @@ const Hotel = () => {
     };
 
     return (
-        <Section>
+        <Section custom={"lg:gap-24 gap-12"}>
             {
                 data && (
                     <>
@@ -39,7 +39,7 @@ const Hotel = () => {
                         </div>
 
                         {
-                            data.icons && <Icons icons={data.detailIcons} />
+                            data.detailIcons && <Icons icons={data.detailIcons} />
                         }
 
                         <DetailCards cards={data.textBoxes} />

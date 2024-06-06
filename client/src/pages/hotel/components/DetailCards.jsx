@@ -3,7 +3,7 @@ import { urlFor } from '../../../client';
 
 const DetailCards = ({ cards }) => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mx-auto p-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mx-auto p-6 lg:px-12">
             {cards.map((card, index) => (
                 <div className="flex flex-col group items-center md:flex-row md:max-w-3xl text-primary" key={index}>
                     <img className="object-cover w-full lg:w-1/3 h-60 md:h-72 lg:h-80" src={urlFor(card.image.asset).width(400).url()} alt="" />
