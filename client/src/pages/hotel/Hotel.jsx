@@ -6,6 +6,7 @@ import ImagesDisplay from './components/ImagesDisplay';
 import HotelDetails from './components/HotelDetails';
 import Icons from './components/Icons';
 import DetailCards from './components/DetailCards';
+import Deal from './components/Deal';
 
 const Hotel = () => {
     let { slug } = useParams();
@@ -26,6 +27,7 @@ const Hotel = () => {
                                 selectedImage={selectedImage}
                                 handleImageClick={handleImageClick}
                                 images={data?.images}
+                                deal={data?.deal}
                             />
 
                             <HotelDetails
@@ -34,9 +36,14 @@ const Hotel = () => {
                                 iconWithText={data.iconWithText}
                                 nights={data.nights}
                                 price={data.price}
+                                deal={data.deal}
                                 description={data.description}
                             />
                         </div>
+
+                        {
+                            data.deal && <Deal deal={data.deal} /> 
+                        }
 
                         {
                             data.detailIcons && <Icons icons={data.detailIcons} />

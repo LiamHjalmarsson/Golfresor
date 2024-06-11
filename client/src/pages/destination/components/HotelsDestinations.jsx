@@ -24,6 +24,7 @@ const HotelsDestinations = ({ countryHotels, text }) => {
                         <HotelCard
                             key={index}
                             path={`${hotel.slug.current}`}
+                            hotel={hotel}
                             image={hotel.cardImage}
                             title={hotel.title}
                             info={"Priser från SEK " + hotel.price + " / " + hotel.nights + " Nätter "}

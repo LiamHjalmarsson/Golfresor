@@ -34,11 +34,11 @@ const Header = () => {
     }
 
     return (
-        <header className='w-full relative z-50'>
+        <header className='w-full relative z-40'>
             <nav className='flex h-32 w-full items-center px-4 lg:px-10 transition duration-300 justify-between relative overflow-hidden'>
 
                 <NavLink to="/" className="w-full lg:w-48 order-2 lg:order-1 z-10">
-                    <h2 className="text-7xl tracking-wide md:text-4xl font-bold max-lg:text-center">
+                    <h2 className="text-2xl tracking-wide md:text-4xl font-bold max-lg:text-center">
                         Golfresor
                     </h2>
                 </NavLink>

@@ -14,7 +14,7 @@ const SearchResult = ({ countries, close }) => {
                                     {country.title.toUpperCase().slice(0, 1) + country.title.slice(1)}
                                 </div>
                                 <div className="w-16 md:w-24 h-full">
-                                    <img src={urlFor(country.headerImages[0].image).width(150).url()} className="h-full w-full object-cover" />
+                                    <img src={urlFor(country.headerImages[0].image).width(150).url()} className="h-full w-full object-cover" alt={country.headerImages[0].alt} />
                                 </div>
                             </NavLink>
                         ))}

@@ -2,7 +2,6 @@ import React from 'react';
 import FavoriteCard from './FavoriteCard';
 
 const Favorites = ({ data, path }) => {
-    console.log(data);
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-12 md:gap-12 md:px-6 lg:px-24 text-start mx-auto max-w-[1800px]">
             {
@@ -10,10 +9,9 @@ const Favorites = ({ data, path }) => {
                     <FavoriteCard
                         key={index}
                         path={path + favorite.slug.current}
-                        title={favorite.title}
+                        favorite={favorite}
                         image={favorite.cardImage ? favorite.cardImage : favorite.headerImages[0].image}
-                        alt={favorite.cardImage ? favorite.cardImage.alt : favorite.headerImages[0].image.alt}
-                        text={!favorite.cardInfoText ? "Pirs från SEK " + favorite.price + " / " + favorite.nights + " nätter" : favorite.cardInfoText}
+                        text={`Pris från SEK ${favorite.price} / ${favorite.nights} nätter`}
                     />
                 ))
             }

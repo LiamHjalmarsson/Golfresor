@@ -1,9 +1,9 @@
 const InputRow = ({ input, msg = false }) => {
     return (
-        <div className={`w-full relative my-4`}>
+        <div className={`flex-grow relative my-4`}>
             <label
                 htmlFor={input.id}
-                className={`absolute top-4 left-4`}
+                className={``}
             >
                 {
                     input.name.toUpperCase().slice(0, 1) + input.name.slice(1)

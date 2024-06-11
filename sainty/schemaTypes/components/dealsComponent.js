@@ -13,17 +13,6 @@ export default {
             title: 'Under rubrik',
             type: 'string',
         },
-        {
-            name: 'deals',
-            title: 'Erbjudande',
-            type: 'array',
-            of: [
-                {
-                    type: 'dealComponent'
-                }
-            ],
-            validation: Rule => Rule.max(3).error('Max 3 erbjudande'),
-        },
     ],
     preview: {
         select: {

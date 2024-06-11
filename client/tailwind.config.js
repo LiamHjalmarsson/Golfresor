@@ -11,7 +11,7 @@ export default {
         secondary: "#6F6A64",
         accent: "00FFFF",
         red: "#F5B7B7",
-        green: "#7DBE6C",
+        green: "#4f9549",
         orange: "#9c6104 "
       },
       boxShadow: {

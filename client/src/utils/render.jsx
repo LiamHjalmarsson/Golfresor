@@ -64,9 +64,9 @@ let renderContent = (component) => {
 }
 
 let renderOffer = (component) => {
-    let { title, subTitle, deals } = component;
+    let { title, subTitle } = component;
 
-    return <Deals title={title} subTitle={subTitle} deals={deals} />
+    return <Deals title={title} subTitle={subTitle} />
 }
 
 let renderContact = (component) => {

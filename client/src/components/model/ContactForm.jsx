@@ -1,23 +1,10 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-
-import Button from '../elements/Button';
+import React from 'react';
 import InputRow from '../elements/InputRow';
+import Button from '../elements/Button';
 
-const Form = ({ close }) => {
-    let form = useRef();
-
-    let sendEmail = async (e) => {
-        e.preventDefault();
-        await emailjs.sendForm('service_bx2imh9', 'template_qtj543b', form.current, 'mcrKYJtLl9odWjGFq');
-
-        form.current.reset();
-
-        close();
-    };
-
+const ContactForm = ({ formRef, sendEmail, close }) => {
     return (
-        <form ref={form} onSubmit={sendEmail} >
+        <form ref={formRef} onSubmit={sendEmail} className=''>
             <InputRow
                 input={{
                     id: "name",
@@ -53,4 +40,4 @@ const Form = ({ close }) => {
     );
 }
 
-export default Form;
+export default ContactForm;

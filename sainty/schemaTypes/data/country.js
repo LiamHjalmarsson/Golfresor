@@ -7,13 +7,14 @@ export default defineType({
     type: 'document',
     description: 'description',
     fields: [
-        {
+        defineField({
             name: 'title',
             title: 'Land',
             type: 'string',
             validation: (Rule) => Rule.required(),
-        },
-        {
+            description: "Skriv in ett land att lägga till",
+        }),
+        defineField({
             name: "slug",
             type: "slug",
             title: "Land slug",
@@ -21,16 +22,19 @@ export default defineType({
                 source: 'title',
             },
             validation: (Rule) => Rule.required(),
-        },
-        {
+            description: "Generera landets url"
+        }),
+        defineField({
             name: "popular",
             title: "Popular",
             type: "boolean",
-        },
-        {
+            description: "Fyll i om landet är populärt"
+        }),
+        defineField({
             name: 'headerImages',
             type: 'array',
             title: 'Bilder',
+            description: "Lägg till bilder som vissas i headern",
             of: [
                 {
                     name: 'imageItem',
@@ -50,50 +54,53 @@ export default defineType({
                                     name: 'alt',
                                     type: 'string',
                                     title: 'Alternativ text',
-                                    description: 'Beskrivande text för bilden',
+                                    description: 'Beskrivande text för bilden visas för exempelvis synskadade',
+                                    validation: (Rule) => Rule.required(),
                                 },
                             ],
-                            validation: (Rule) => Rule.required(),
                         },
                         {
                             name: 'title',
                             type: 'string',
                             title: 'Rubrik',
                             validation: (Rule) => Rule.required(),
+                            description: "Rubrik text som visas på bilden"
                         },
                         {
                             name: 'headerInfo',
                             type: 'string',
                             title: 'Text',
+                            description: "Text som visas på bilden"
                         },
                     ],
                 },
             ],
             validation: (Rule) => Rule.required(),
-        },
-        {
+        }),
+        defineField({
             name: "cardInfoText",
             title: "Text som visas i kortet för landet på andra sidor",
             type: "string",
             validation: (Rule) => Rule.required(),
-        },
-        {
+        }),
+        defineField({
             name: 'description',
-            title: 'Text som visas inne på landet',
+            title: 'Text som visas inne på landets sida',
             type: 'text',
             validation: (Rule) => Rule.required(),
-        },
-        {
+        }),
+        defineField({
             name: 'subTitle',
             title: 'Under rubrik',
             type: 'string',
+            description: "under runrik som visas inne på ett land",
             validation: (Rule) => Rule.required(),
-        },
-        {
+        }),
+        defineField({
             name: 'hotelAndResortText',
             title: 'Text om hotel och resort',
             type: 'string',
-        },
+        }),
     ],
     preview: {
         select: {

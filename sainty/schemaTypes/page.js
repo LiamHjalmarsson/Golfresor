@@ -30,10 +30,6 @@ export default defineType({
 
                 },
                 {
-                    type: 'dealComponent'
-
-                },
-                {
                     type: 'dealsComponent'
 
                 },
@@ -45,12 +41,6 @@ export default defineType({
                     type: 'contentComponent'
 
                 },
-                {
-                    type: 'formComponent'
-                },
-                {
-                    type: "formFieldComponent"
-                }
             ],
         }),
     ],
