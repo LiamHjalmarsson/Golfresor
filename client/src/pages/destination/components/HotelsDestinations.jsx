@@ -2,20 +2,18 @@ import React from 'react';
 import HotelCard from './HotelCard';
 import SecondaryHeading from '../../../components/heading/SecondaryHeading';
 
-const HotelsDestinations = ({ countryHotels, text }) => {
+const HotelsDestinations = ({ countryHotels, country }) => {
 
     return (
         <div className='text-center'>
             <div className='mb-6 lg:mb-12 text-center'>
                 <SecondaryHeading subTitle="Hotel & Resort" />
 
-                {
-                    text && (
-                        <p className="text-xs md:text-sm mt-2">
-                            {text}
-                        </p>
-                    )
-                }
+
+                <p className="text-xs md:text-sm mt-2">
+                    Din nästa golfresa väntar – Upptäck de bästa golfbanorna i {country}!
+                </p>
+
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

@@ -16,7 +16,6 @@ const HeroText = ( { title, text, index, currentIndex }) => {
                         </p>
                     )
                 }
-
             </div>
         </div>
     );

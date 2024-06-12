@@ -23,12 +23,6 @@ export default defineType({
             description: 'Text som visas i knappen',
         },
         {
-            name: 'link',
-            title: 'Länk',
-            type: 'string',
-            description: 'Vart knappen ska länka till',
-        },
-        {
             name: 'image',
             title: 'Bild',
             type: 'image',

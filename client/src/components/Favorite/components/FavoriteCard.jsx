@@ -25,9 +25,10 @@ const FavoriteCard = ({ path, favorite, text, image }) => {
                             )
                         }
                 </div>
+                
                 <div className='flex justify-between items-center gap-2 mt-4'>
                     <p className="text-base md:text-sm lg:text-base flex-grow line-clamp-1">
-                        {text}
+                        {favorite.cardInfoText ? favorite.cardInfoText : "Från " + favorite.price + " SEK / " + favorite.nights + " nights"}
                     </p>
                     <div className="flex items-center justify-end overflow-hidden w-16">
                         <span className="opacity-40 text-xs transition duration-300 group-hover:translate-x-0 -translate-x-[200%]">

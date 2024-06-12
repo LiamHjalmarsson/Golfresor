@@ -25,8 +25,8 @@ const Destination = () => {
                         <Hero images={data.headerImages} />
 
                         <div className='w-full xl:w-full max-w-3xl px-6 md:px-8 mx-auto flex flex-col gap-12 lg:gap-24'>
-                            <DestinationDescription title={data.title} subTitle={data.subTitle} description={data.description} />
-                            <HotelsDestinations countryHotels={countryHotels} text={data.hotelAndResortText} />
+                            <DestinationDescription title={data.title} description={data.description} />
+                            <HotelsDestinations countryHotels={countryHotels} country={data.title} />
                         </div>
                     </>
                 )

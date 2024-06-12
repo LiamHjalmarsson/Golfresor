@@ -27,10 +27,8 @@ const Hero = ({ images }) => {
                     <HeroImage
                         index={index}
                         key={index}
-                        image={image.image}
-                        text={image.headerInfo}
+                        image={image}
                         currentIndex={currentIndex}
-                        title={image.title}
                     />
                 ))
             }

@@ -20,12 +20,10 @@ export default {
             subTitle: 'subTitle',
             deals: 'deals',
         },
-        prepare(selection) {
-            const { title, subTitle, deals } = selection;
+        prepare({ title, subTitle }) {
             return {
                 title: title || 'No primary heading',
                 subtitle: subTitle || 'No sub heading',
-                description: `${deals ? deals.length : 0} offer(s)`,
             };
         },
     },

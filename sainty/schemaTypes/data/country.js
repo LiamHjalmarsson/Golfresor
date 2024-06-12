@@ -1,5 +1,4 @@
 import { defineType, defineField } from "sanity"
-import { DocumentTextIcon } from '@sanity/icons';
 
 export default defineType({
     name: 'country',
@@ -88,18 +87,6 @@ export default defineType({
             title: 'Text som visas inne på landets sida',
             type: 'text',
             validation: (Rule) => Rule.required(),
-        }),
-        defineField({
-            name: 'subTitle',
-            title: 'Under rubrik',
-            type: 'string',
-            description: "under runrik som visas inne på ett land",
-            validation: (Rule) => Rule.required(),
-        }),
-        defineField({
-            name: 'hotelAndResortText',
-            title: 'Text om hotel och resort',
-            type: 'string',
         }),
     ],
     preview: {

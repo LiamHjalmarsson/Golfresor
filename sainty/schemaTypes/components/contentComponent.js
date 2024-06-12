@@ -2,7 +2,7 @@ import { DocumentTextIcon } from '@sanity/icons';
 
 export default {
     name: 'contentComponent',
-    title: 'Välj att visa visa innehåll av länder eller hotel',
+    title: 'Välj att visa visa antingen innehåll av länder eller hotel',
     type: 'object',
     fields: [
         {

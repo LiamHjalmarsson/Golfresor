@@ -59,6 +59,15 @@ export default defineType({
             ]
         }),
         defineField({
+            name: 'country',
+            title: 'Land',
+            type: 'reference',
+            to: {
+                type: "country"
+            },
+            description: "Välj vilket land som hotelet finns i för att det ska synas på korrekt land"
+        }),
+        defineField({
             name: 'cardImage',
             title: 'Bild som kommer att visas på kort för hotelet på andra sidor',
             type: 'image',
@@ -130,68 +139,6 @@ export default defineType({
             type: 'text',
         }),
         defineField({
-            name: 'country',
-            title: 'Land',
-            type: 'reference',
-            to: {
-                type: "country"
-            },
-            description: "Välj vilket land som hotelet finns i för att det ska synas på korrekt land"
-        }),
-        defineField({
-            name: 'textBoxes',
-            title: 'Informations kort om hotelet',
-            description: "Lägg till innehåll om exempelvis hotelets golf bannor, mat, boende",
-            type: 'array',
-            of: [
-                {
-                    type: 'object',
-                    fields: [
-                        {
-                            name: 'title',
-                            title: 'Rubrik',
-                            type: 'string'
-                        },
-                        {
-                            name: 'image',
-                            title: 'Image',
-                            type: 'image',
-                            options: {
-                                hotspot: true,
-                                metadata: ['lqip', 'palette', 'blurhash'],
-                            },
-                            fields: [
-                                {
-                                    name: 'alt',
-                                    type: 'string',
-                                    title: 'Alternativ text',
-                                    description: 'Beskrivande text för bilden'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'description',
-                            title: 'Text',
-                            type: 'text'
-                        }
-                    ],
-                    preview: {
-                        select: {
-                            title: 'title',
-                            media: 'image'
-                        },
-                        prepare(selection) {
-                            let { title, media } = selection;
-                            return {
-                                title: title,
-                                media: media || DocumentTextIcon,
-                            };
-                        }
-                    }
-                }
-            ]
-        }),
-        defineField({
             title: "Ikoner med text i Golfpaket med prisgaranti",
             name: "iconWithText",
             type: "array",
@@ -244,6 +191,59 @@ export default defineType({
                             validation: Rule => Rule.required(),
                         },
                     ],
+                }
+            ]
+        }),
+        defineField({
+            name: 'textBoxes',
+            title: 'Informations kort om hotelet',
+            description: "Lägg till innehåll om exempelvis hotelets golf bannor, mat, boende",
+            type: 'array',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'title',
+                            title: 'Rubrik',
+                            type: 'string'
+                        },
+                        {
+                            name: 'image',
+                            title: 'Image',
+                            type: 'image',
+                            options: {
+                                hotspot: true,
+                                metadata: ['lqip', 'palette', 'blurhash'],
+                            },
+                            fields: [
+                                {
+                                    name: 'alt',
+                                    type: 'string',
+                                    title: 'Alternativ text',
+                                    description: 'Beskrivande text för bilden'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'description',
+                            title: 'Text',
+                            type: 'text'
+                        }
+                    ],
+                    preview: {
+                        select: {
+                            title: 'title',
+                            media: 'image'
+                        },
+                        prepare(selection) {
+                            let { title, media } = selection;
+                            return {
+                                title: title,
+                                media: media || DocumentTextIcon,
+                            };
+                        }
+                    }
                 }
             ]
         }),

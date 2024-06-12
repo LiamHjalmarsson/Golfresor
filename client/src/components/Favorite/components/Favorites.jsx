@@ -11,7 +11,6 @@ const Favorites = ({ data, path }) => {
                         path={path + favorite.slug.current}
                         favorite={favorite}
                         image={favorite.cardImage ? favorite.cardImage : favorite.headerImages[0].image}
-                        text={`Pris från SEK ${favorite.price} / ${favorite.nights} nätter`}
                     />
                 ))
             }
