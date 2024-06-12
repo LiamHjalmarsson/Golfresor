@@ -13,11 +13,7 @@ const Deals = ({ title, subTitle }) => {
                 {
                     data?.map((deal, index) => (
                         <Deal
-                            image={deal.cardImage}
-                            name={deal.deal.rubrik}
-                            description={deal.deal.description}
-                            price={deal.deal.price}
-                            slug={deal.slug.current}
+                            deal={deal}
                             key={index}
                         />
                     ))

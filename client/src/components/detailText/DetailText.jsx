@@ -5,16 +5,18 @@ import Image from './Image';
 const DetailText = ({ subTitle, title, description, path, buttonText, image, bottomText }) => {
     return (
         <div className='mx-auto max-w-7xl flex md:flex-row flex-col md:px-12 md:gap-12'>
-
             <Text
                 description={description}
                 buttonText={buttonText}
                 title={title}
-                subTitle={subTitle} 
+                subTitle={subTitle}
                 path={path}
             />
 
-            <Image image={image} bottomText={bottomText} />
+            <Image
+                image={image}
+                bottomText={bottomText}
+            />
         </div>
     );
 }

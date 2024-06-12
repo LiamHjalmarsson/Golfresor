@@ -5,7 +5,7 @@ import Heading from '../heading/Heading';
 import Favorites from './components/Favorites';
 import Button from '../elements/Button';
 
-const Hotels = ({ title, subTitle }) => {
+const Hotels = ({ title, subTitle, text }) => {
     let [displayLimit, setDisplayLimit] = useState(4);
     let { pathname } = useLocation();
     let { data } = useFetch(pathname !== ("/") ? '*[_type == "hotel"]' : '*[_type == "hotel" && popular == true]');
@@ -15,9 +15,12 @@ const Hotels = ({ title, subTitle }) => {
     };
 
     return (
-        <div className='flex flex-col gap-12'>
+        <div className='flex flex-col gap-12 px-6'>
             <div className="px-4 text-center">
                 <Heading subTitle={subTitle} title={title} />
+                <p className='mt-4'>
+                    {text}
+                </p>
             </div>
 
             {

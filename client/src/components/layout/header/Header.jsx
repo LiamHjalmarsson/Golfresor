@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import Links from './Links';
 import BurgerMenu from './BurgerMenu';
 import { FaSearch } from 'react-icons/fa';
@@ -10,8 +10,14 @@ const Header = () => {
     let [search, setSearch] = useState(false);
     let [searchTerm, setSearchTerm] = useState("");
     let [open, setOpen] = useState(false);
+    let { pathname } = useLocation();
 
     let { data } = useFetch(`*[_type == "country"]`);
+
+    useEffect(() => {
+        setSearch(false);
+        setOpen(false);
+    }, [pathname]);
 
     let searchHandler = () => {
         setSearch(!search);

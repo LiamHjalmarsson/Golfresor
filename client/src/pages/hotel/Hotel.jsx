@@ -22,7 +22,7 @@ const Hotel = () => {
             {
                 data && (
                     <>
-                        <div className="flex w-full max-w-7xl relative flex-col lg:flex-row gap-6 lg:gap-12 mx-auto lg:px-12 mt-24">
+                        <div className="flex w-full max-w-7xl relative flex-col lg:flex-row gap-6 lg:gap-12 mx-auto lg:px-12 lg:mt-24">
                             <ImagesDisplay
                                 selectedImage={selectedImage}
                                 handleImageClick={handleImageClick}

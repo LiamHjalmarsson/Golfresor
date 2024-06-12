@@ -6,10 +6,9 @@ import { useOutletContext } from 'react-router-dom';
 
 const Contact = ({ title, description, buttonText, image }) => {
     let { handleModal } = useOutletContext();
-
     return (
         <div className='w-full h-[400px] md:h-[500px] max-w-7xl mx-auto flex justify-center items-center flex-col md:flex-row relative shadow-lg'>
-            <img src={urlFor(image).width(800).url()} className='max-md:absolute object-cover object-center opacity-90 w-full h-full' alt='' />
+            <img src={urlFor(image).width(800).url()} className='max-md:absolute object-cover object-center opacity-90 w-full h-full' alt={image.alt} />
             <div className='z-10 max-md:bg-opacity-50 w-full xl:max-w-1/2 text-white h-full flex flex-col px-12 justify-center bg-primary lg:p-12 text-center'>
                 <PrimaryHeading title={title} />
                 <p className="mt-3 mb-6 lg:my-6 text-sm md:text-base lg:text-lg">

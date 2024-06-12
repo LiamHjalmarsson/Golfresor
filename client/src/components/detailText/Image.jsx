@@ -1,11 +1,10 @@
 import React from 'react';
 import { urlFor } from '../../client';
 
-const Image = ({ image, bottomText, alt }) => {
-
+const Image = ({ image, bottomText }) => {
     return (
-        <div className="relative w-full md:w-1/2 max-md:mt-12">
-            <img src={urlFor(image).width(600).url()} className="h-60 md:h-full w-full object-cover object-center" alt={alt} />
+        <div className="relative w-md max-md:mt-12">
+            <img src={urlFor(image.asset).width(400).url()} className="h-60 md:h-full w-full object-cover object-center" alt={image.alt} />
 
             {
                 bottomText && (

@@ -4,7 +4,7 @@ import { urlFor } from '../../../client';
 
 const SearchResult = ({ countries, close }) => {
     return (
-        <div className="absolute top-16 md:top-28 left-0 right-0 max-w-xl mx-auto p-4 md:rounded-md shadow-lg bg-white bg-opacity-90">
+        <div className="absolute top-14 md:top-28 left-0 right-0 max-w-xl mx-auto p-4 md:rounded-md shadow-lg bg-white bg-opacity-90">
             {
                 countries.length > 0 && (
                     <>

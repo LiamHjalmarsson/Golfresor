@@ -12,7 +12,6 @@ const Destination = () => {
 
     let { data } = useFetch(`*[_type == "country" && slug.current == "${slug}"][0]`);
     let { data: hotels } = useFetch(`*[_type == "hotel"]`);
-    let { data: page } = useFetch(`*[_type == "page" && title == "Destination"][0]`);
 
     let countryId = data?._id;
     let countryHotels = hotels ? hotels.filter(hotel => hotel.country?._ref === countryId) : [];
@@ -31,15 +30,6 @@ const Destination = () => {
                     </>
                 )
             }
-
-            {
-                page?.components.map((component, index) => (
-                    <div className="w-full md:w-2/3 xl:w-1/3 h-inherit px-4" key={index}>
-                        {renderComponent(component)}
-                    </div>
-                ))
-            }
-
         </Section>
     );
 }
