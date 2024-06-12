@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { client } from "../client";
 
-const getData = async ({ query }) => {
+export const getData = async ({ query }) => {
     try {
         let data = await client.fetch(query);
         return data;
