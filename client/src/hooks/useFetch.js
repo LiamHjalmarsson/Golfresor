@@ -21,7 +21,6 @@ const useFetch = (query) => {
                 let data = await getData({ query: query });
                 setData(data);
             } catch (error) {
-                console.error(error);
                 setError(error);
             }
         };

@@ -7,9 +7,6 @@ const Link = ({ link }) => {
 
     let url = link.internalLink.title === "Hem" ? "" : link.internalLink.title.replace(/\s+/g, '').toLowerCase();
 
-
-    console.log(pathname);
-    console.log(url);
     return (
         <NavLink
             to={`/${url}`}
