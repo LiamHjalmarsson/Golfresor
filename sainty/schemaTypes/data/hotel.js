@@ -8,7 +8,7 @@ export default defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'Namn',
+            title: 'Hotel*',
             type: 'string',
             description: "Skriv in namn på hotel",
             validation: (Rule) => Rule.required()
@@ -16,7 +16,7 @@ export default defineType({
         defineField({
             name: "slug",
             type: "slug",
-            title: "Hotel slug",
+            title: "Hotel slug*",
             options: {
                 source: "title"
             },
@@ -60,7 +60,7 @@ export default defineType({
         }),
         defineField({
             name: 'country',
-            title: 'Land',
+            title: 'Land*',
             type: 'reference',
             to: {
                 type: "country"
@@ -69,7 +69,7 @@ export default defineType({
         }),
         defineField({
             name: 'cardImage',
-            title: 'Bild som kommer att visas på kort för hotelet på andra sidor',
+            title: 'Bild som kommer att visas på kort för hotelet på andra sidor*',
             type: 'image',
             options: {
                 hotspot: true,
@@ -80,7 +80,7 @@ export default defineType({
                 {
                     name: 'alt',
                     type: 'string',
-                    title: 'Alternativ text',
+                    title: 'Alternativ text*',
                     description: 'Alt text beskvriver bilden för exempelvis synskadade',
                     validation: (Rule) => Rule.required(),
                 },
@@ -94,7 +94,7 @@ export default defineType({
         }),
         defineField({
             name: 'images',
-            title: 'Hotelbilder',
+            title: 'Hotelbilder*',
             type: 'array',
             description: "Alla bilder som finns till hotelet",
             validation: (Rule) => Rule.required(),
@@ -109,7 +109,7 @@ export default defineType({
                         {
                             name: 'alt',
                             type: 'string',
-                            title: 'Alternativ text',
+                            title: 'Alternativ text*',
                             description: 'Alt text beskvriver bilden för exempelvis synskadade',
                             validation: (Rule) => Rule.required(),
                         }
@@ -148,7 +148,7 @@ export default defineType({
                     type: "object",
                     fields: [
                         {
-                            title: "Icon",
+                            title: "Icon*",
                             name: "icon",
                             type: "iconPicker",
                             options: {
@@ -157,7 +157,7 @@ export default defineType({
                             validation: Rule => Rule.required(),
                         },
                         {
-                            title: "Text",
+                            title: "Text*",
                             name: "text",
                             type: "string",
                             validation: Rule => Rule.required(),
@@ -176,7 +176,7 @@ export default defineType({
                     type: "object",
                     fields: [
                         {
-                            title: "Icon",
+                            title: "Icon*",
                             name: "icon",
                             type: "iconPicker",
                             options: {
@@ -185,7 +185,7 @@ export default defineType({
                             validation: Rule => Rule.required(),
                         },
                         {
-                            title: "Text",
+                            title: "Text*",
                             name: "text",
                             type: "string",
                             validation: Rule => Rule.required(),
@@ -236,8 +236,7 @@ export default defineType({
                             title: 'title',
                             media: 'image'
                         },
-                        prepare(selection) {
-                            let { title, media } = selection;
+                        prepare({ title, image }) {
                             return {
                                 title: title,
                                 media: media || DocumentTextIcon,

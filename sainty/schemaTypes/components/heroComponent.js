@@ -9,7 +9,9 @@ export default defineType({
         defineField({
             name: 'images',
             type: 'array',
-            title: 'Bilder',
+            title: 'Bilder*',
+            description: "Lägg till minst en bild som visas i Hero/banner",
+            validation: (Rule) => Rule.required(),
             of: [
                 {
                     name: 'imageItem',
@@ -19,6 +21,7 @@ export default defineType({
                             name: 'image',
                             type: 'image',
                             title: 'Bild',
+                            validation: (Rule) => Rule.required(),
                             options: {
                                 hotspot: true
                             },
@@ -26,7 +29,8 @@ export default defineType({
                                 {
                                     name: 'alt',
                                     type: 'string',
-                                    title: 'Alternative text',
+                                    title: 'Alternative text*',
+                                    validation: (Rule) => Rule.required(),
                                 },
                             ],
                         },

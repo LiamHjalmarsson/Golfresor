@@ -9,7 +9,7 @@ const DestinationDescription = ({ title, description }) => {
     };
 
     return (
-        <div className="">
+        <div className="text-center">
             <Heading subTitle="Golfresor till" title={title} />
             <p className={`text-sm md:text-base text-primary leading-relaxed mt-4 mb-8 ${showFullDescription ? '' : 'line-clamp-5'}`}>
                 {description}

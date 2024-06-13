@@ -5,13 +5,16 @@ export default {
     fields: [
         {
             name: 'title',
-            title: 'Rubrik',
+            title: 'Rubrik*',
             type: 'string',
+            description: "Rubrik som visas med Erbjudande komponent", 
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'subTitle',
             title: 'Under rubrik',
             type: 'string',
+            description: "Underrubrik som visas med Erbjudande komponent", 
         },
     ],
     preview: {

@@ -8,8 +8,9 @@ export default defineType({
     fields: [
         {
             name: 'title',
-            title: 'Rubrik',
+            title: 'Rubrik*',
             type: 'string',
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'subTitle',
@@ -18,8 +19,9 @@ export default defineType({
         },
         {
             name: 'description',
-            title: 'Text',
+            title: 'Text*',
             type: 'text',
+            validation: (Rule) => Rule.required(),
         },
     ],
     icon: DocumentTextIcon,

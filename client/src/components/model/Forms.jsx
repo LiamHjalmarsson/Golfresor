@@ -15,6 +15,7 @@ const Forms = ({ close }) => {
     let sendEmail = async (e) => {
         e.preventDefault();
         setLoading(true);
+
         await emailjs.sendForm('service_bx2imh9', key, form.current, 'mcrKYJtLl9odWjGFq');
 
         form.current.reset();
@@ -23,8 +24,7 @@ const Forms = ({ close }) => {
         close();
     };
 
-
-    if (!pathname.includes("hotels")) {
+    if (pathname.includes("home")) {
         return (
             <ContactForm formRef={form} sendEmail={sendEmail} close={close} loading={loading} />
         );

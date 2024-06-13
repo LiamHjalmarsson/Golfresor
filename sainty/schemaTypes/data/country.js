@@ -8,7 +8,7 @@ export default defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'Land',
+            title: 'Land*',
             type: 'string',
             validation: (Rule) => Rule.required(),
             description: "Skriv in ett land att lägga till",
@@ -16,7 +16,7 @@ export default defineType({
         defineField({
             name: "slug",
             type: "slug",
-            title: "Land slug",
+            title: "Land slug*",
             options: {
                 source: 'title',
             },
@@ -32,7 +32,7 @@ export default defineType({
         defineField({
             name: 'headerImages',
             type: 'array',
-            title: 'Bilder',
+            title: 'Bilder*',
             description: "Lägg till bilder som vissas i headern",
             of: [
                 {
@@ -43,6 +43,7 @@ export default defineType({
                             name: 'image',
                             title: 'Bild',
                             type: 'image',
+                            validation: (Rule) => Rule.required(),
                             options: {
                                 hotspot: true,
                                 metadata: ['lqip', 'palette', 'blurhash'],
@@ -52,7 +53,7 @@ export default defineType({
                                 {
                                     name: 'alt',
                                     type: 'string',
-                                    title: 'Alternativ text',
+                                    title: 'Alternativ text*',
                                     description: 'Beskrivande text för bilden visas för exempelvis synskadade',
                                     validation: (Rule) => Rule.required(),
                                 },
@@ -61,7 +62,7 @@ export default defineType({
                         {
                             name: 'title',
                             type: 'string',
-                            title: 'Rubrik',
+                            title: 'Rubrik*',
                             validation: (Rule) => Rule.required(),
                             description: "Rubrik text som visas på bilden"
                         },
@@ -74,11 +75,10 @@ export default defineType({
                     ],
                 },
             ],
-            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "cardInfoText",
-            title: "Text som visas i kortet för landet på andra sidor",
+            title: "Text som visas i kortet för landet på andra sidor*",
             type: "string",
             validation: (Rule) => Rule.required(),
         }),
@@ -86,7 +86,6 @@ export default defineType({
             name: 'description',
             title: 'Text som visas inne på landets sida',
             type: 'text',
-            validation: (Rule) => Rule.required(),
         }),
     ],
     preview: {

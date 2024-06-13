@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Section from '../../components/layout/section/Section';
 import { useParams } from 'react-router-dom';
-import useFetch, { getData } from '../../hooks/useFetch';
+import { getData } from '../../hooks/useFetch';
 import Hero from '../../components/hero/Hero';
 import HotelsDestinations from './components/HotelsDestinations';
 import DestinationDescription from './components/DestinationDescription';

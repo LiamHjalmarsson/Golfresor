@@ -8,19 +8,10 @@ export default defineType({
     fields: [
         {
             name: 'title',
-            title: 'Rubrik',
+            title: 'Rubrik*',
             type: 'string',
-        },
-        {
-            name: 'description',
-            title: 'Text',
-            type: 'text',
-        },
-        {
-            name: 'buttonText',
-            title: 'Knapp text',
-            type: 'string',
-            description: 'Text som visas i knappen',
+            description: "Rubrik som visas i offer kompoenten",
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'image',
@@ -39,6 +30,19 @@ export default defineType({
                     description: 'Beskrivande text för bilden',
                 },
             ],
+        },
+        {
+            name: 'description',
+            title: 'Text*',
+            type: 'text',
+            description: "Lägg till en text för offert",
+            validation: (Rule) => Rule.required(),
+        },
+        {
+            name: 'buttonText',
+            title: 'Knapp text*',
+            type: 'string',
+            description: 'Text som visas i knappen',
         },
     ],
     icon: DocumentTextIcon,

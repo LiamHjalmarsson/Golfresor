@@ -1,6 +1,6 @@
 const InputRow = ({ input, msg = false }) => {
     return (
-        <div className={`flex-grow relative my-4`}>
+        <div className={`flex-grow relative my-2 lg:my-4`}>
             <label
                 htmlFor={input.id}
                 className={``}

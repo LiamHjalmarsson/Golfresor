@@ -28,7 +28,7 @@ const ContactForm = ({ formRef, sendEmail, close }) => {
                 msg={true}
             />
 
-            <div className='flex justify-center gap-12 w-full mt-8'>
+            <div className='flex justify-center gap-4 lg:gap-12 w-full mt-8'>
                 <button className='text-center text-base lg:text-lg w-fit py-4 px-12 lg:px-8 border-2 border-primary text-primary font-bold tracking-wide rounded-md hover:bg-primary hover:text-stone-50 transition duration-300' onClick={close}>
                     Stäng
                 </button>
