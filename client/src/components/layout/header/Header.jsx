@@ -77,6 +77,7 @@ const Header = () => {
                 handleSearch={handleSearch}
                 searchTerm={searchTerm}
                 close={onClickClose}
+                clear={() => setSearchTerm("")}
             />
         </header>
     );

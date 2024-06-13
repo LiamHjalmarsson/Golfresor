@@ -4,7 +4,7 @@ import { MdClose } from "react-icons/md";
 import SearchResult from './SearchResults';
 
 
-const Search = ({ open, countries, searchTerm, handleSearch, close }) => {
+const Search = ({ open, countries, searchTerm, handleSearch, close, clear }) => {
     let filteredCountries = countries ? countries.filter(country => country.title.toLowerCase().includes(searchTerm.toLowerCase())) : [];
 
     return (
@@ -12,10 +12,10 @@ const Search = ({ open, countries, searchTerm, handleSearch, close }) => {
 
             <div className={`${open ? "translate-x-0" : "-translate-x-[400%]"} top-0 md:top-8 max-w-xl w-full shadow-lg absolute md:rounded-md transition-transform duration-300 bg-white bg-opacity-90`}>
                 <div className="flex justify-center items-center px-4">
-                    <FaSearch />
+                    <FaSearch/>
                     <input type="search" id="default-search" className="w-full p-4 pl-8 bg-transparent outline-none" onChange={handleSearch} value={searchTerm} />
                     {
-                        searchTerm !== "" && <MdClose className="font-bold text-xl"/>
+                        searchTerm !== "" && <MdClose className="font-bold text-xl" onClick={clear}/>
                     }
                 </div>
             </div>
