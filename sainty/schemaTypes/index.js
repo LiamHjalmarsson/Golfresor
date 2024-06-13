@@ -9,6 +9,7 @@ import richTextComponent from "./components/richTextComponent";
 import dealsComponent from "./components/dealsComponent";
 import offertComponent from "./components/offertComponent";
 import contentComponent from "./components/contentComponent";
+import Navigation from "./data/Navigation";
 
 export const schemaTypes = [
     page, 
@@ -21,4 +22,5 @@ export const schemaTypes = [
     
     country, 
     hotel, 
+    Navigation,
 ];

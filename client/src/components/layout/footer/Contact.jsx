@@ -1,25 +1,20 @@
 import React from 'react';
 
-const Contact = () => {
+const Contact = ({ contact }) => {
     return (
-        <div className=''>
+        <div className='p-4'>
             <h2 className="mb-2 text-sm lg:text-base font-semibold uppercase ">
                 Kontakta
             </h2>
             <ul className="text-xs lg:text-sm">
                 <li className="mb-4 lg:mb-2">
-                    <a href="tel:">
-                        Telefon: +46767675775
+                    <a href={`tel:${contact.phone}`}>
+                        Telefon: {contact.phone}
                     </a>
                 </li>
                 <li className="mb-4 lg:mb-2">
-                    <a href='mailto:'>
-                        E-mail: liam.hjalmarssons@gmail.com
-                    </a>
-                </li>
-                <li className="mb-4 lg:mb-2">
-                    <a href='mailto:'>
-                        E-mail: liam.hjalmarssons@gmail.com
+                    <a href={`mailto:${contact.email}`}>
+                        E-mail: {contact.email}
                     </a>
                 </li>
             </ul>

@@ -1,18 +1,7 @@
 import React from 'react';
 import Link from './Link';
 
-const links = [
-    {
-        name: "Destinationer",
-        href: "destinationer"
-    },
-    {
-        name: "Om oss",
-        href: "omoss"
-    }
-];
-
-const Links = ({ open, openHandler }) => {
+const Links = ({ links, open, openHandler }) => {
     return (
         <>
             <ul className="hidden absolute justify-center items-center w-full gap-8 flex-grow lg:flex order-2">
@@ -20,8 +9,7 @@ const Links = ({ open, openHandler }) => {
                     links.map((link, index) => (
                         <li key={index}>
                             <Link
-                                href={link.href}
-                                name={link.name}
+                                link={link}
                             />
                         </li>
                     ))
@@ -34,8 +22,7 @@ const Links = ({ open, openHandler }) => {
                         links.map((link, index) => (
                             <li key={index} className='p-8 cursor-pointer w-full text-center' onClick={openHandler}>
                                 <Link
-                                    href={link.href}
-                                    name={link.name}
+                                    link={link}
                                 />
                             </li>
                         ))

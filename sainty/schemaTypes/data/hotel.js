@@ -236,7 +236,7 @@ export default defineType({
                             title: 'title',
                             media: 'image'
                         },
-                        prepare({ title, image }) {
+                        prepare({ title, media }) {
                             return {
                                 title: title,
                                 media: media || DocumentTextIcon,
