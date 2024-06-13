@@ -20,6 +20,7 @@ const Hero = ({ images }) => {
                 icon={<MdOutlineArrowBackIos />}
                 custom={`left-0 ${currentIndex === 0 ? "opacity-0" : "opacity-100"}`}
                 clickHandler={handlePrev}
+                disabled={currentIndex === 0}
             />
 
             {
@@ -37,6 +38,7 @@ const Hero = ({ images }) => {
                 icon={<MdOutlineArrowForwardIos />}
                 custom={`right-0 ${currentIndex === images.length - 1 ? "opacity-0" : "opacity-100"}`}
                 clickHandler={handleNext}
+                disabled={currentIndex === images.length - 1}
             />
         </div>
     );

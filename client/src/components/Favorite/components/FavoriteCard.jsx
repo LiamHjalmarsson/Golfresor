@@ -6,7 +6,7 @@ import { MdArrowForwardIos } from 'react-icons/md';
 const FavoriteCard = ({ path, favorite, text, image }) => {
     return (
         <Link to={`/${path}`} className='group relative cursor-pointer flex flex-col shadow-xl'>
-            <div className='h-60 md:h-72 lg:h-80'>
+            <div className='h-56 md:h-62 lg:h-72'>
                 <div className='overflow-hidden h-full w-full '>
                     <img src={urlFor(image.asset).width(600).url()} className=' object-cover object-center opacity-90 group-hover:opacity-85 w-full h-full transition duration-300 transform group-hover:scale-110' alt={image.alt} />
                 </div>
