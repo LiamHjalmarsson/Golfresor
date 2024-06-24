@@ -6,17 +6,16 @@ const HotelsDestinations = ({ countryHotels, country }) => {
 
     return (
         <div className='text-center'>
-            <div className='mb-6 lg:mb-12 text-center'>
+            <div className='mb-6 lg:mb-12 text-centee'>
                 <SecondaryHeading subTitle="Hotel & Resort" />
 
 
                 <p className="text-xs md:text-sm mt-2">
                     Din nästa golfresa väntar – Upptäck de bästa golfbanorna i {country}!
                 </p>
-
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
                 {
                     countryHotels.map((hotel, index) => (
                         <HotelCard

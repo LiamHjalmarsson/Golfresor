@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { urlFor } from '../../client';
 import HeroText from './HeroText';
 

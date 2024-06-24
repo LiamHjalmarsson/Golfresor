@@ -24,8 +24,8 @@ const Footer = () => {
     }`);
 
     return (
-        <footer className="text-stone-200 bg-primary mt-24 lg:mt-48">
-            <div className="mx-auto w-full md:max-w-7xl p-6 md:p-12">
+        <footer className="text-stone-800 border-t-1 border mt-24 lg:mt-48">
+            <div className="mx-auto w-full md:max-w-7xl p-6 md:p-12 max-lg:text-center">
                 <div className="grid grid-cols-1 lg:grid-cols-3 max-lg:px-6 gap-0 lg:gap-12">
                     <NavLink to="/" className={"w-full relative"}>
                         {navigation && <Logo logo={navigation[0].logo} />}

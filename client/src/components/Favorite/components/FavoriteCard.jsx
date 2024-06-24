@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { urlFor } from '../../../client';
 import { MdArrowForwardIos } from 'react-icons/md';
 
-const FavoriteCard = ({ path, favorite, text, image }) => {
+const FavoriteCard = ({ path, favorite, image }) => {
     return (
         <Link to={`/${path}`} className='group relative cursor-pointer flex flex-col shadow-xl'>
-            <div className='h-56 md:h-62 lg:h-72'>
+            <div className='h-56 md:h-62 lg:h-72 w-full'>
                 <div className='overflow-hidden h-full w-full '>
                     <img src={urlFor(image.asset).width(600).url()} className=' object-cover object-center opacity-90 group-hover:opacity-85 w-full h-full transition duration-300 transform group-hover:scale-110' alt={image.alt} />
                 </div>
@@ -18,7 +18,7 @@ const FavoriteCard = ({ path, favorite, text, image }) => {
                         {favorite.title.toUpperCase().slice(0, 1) + favorite.title.slice(1)}
                     </h2>
                         {
-                            favorite.deal && (
+                            favorite.deal?.isDeal && (
                                 <span className='bg-green py-1 px-4 bg-opacity-50 font-semibold'>
                                     Erbjudande
                                 </span>

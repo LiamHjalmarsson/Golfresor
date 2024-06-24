@@ -10,8 +10,8 @@ const Countries = ({ subTitle, title, text }) => {
     let { data } = useFetch(pathname !== ("/") ? '*[_type == "country"]' : '*[_type == "country" && popular == true]');
 
     return (
-        <div className='flex flex-col gap-12 px-6'>
-            <div className="px-4 text-center">
+        <div className='flex flex-col gap-12 px-4 lg:px-12'>
+            <div className="text-center">
                 <Heading subTitle={subTitle} title={title} />
                 <p className='mt-4'>
                     {text}

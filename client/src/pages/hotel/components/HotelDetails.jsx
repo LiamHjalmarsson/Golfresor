@@ -4,25 +4,26 @@ import Button from '../../../components/elements/Button';
 import DetailsIcons from './DetailsIcons';
 import { useOutletContext } from 'react-router-dom';
 
-const HotelDetails = ({ subTitle, title, iconWithText, nights, price, description, deal }) => {
+const HotelDetails = ({ data }) => {
+    let { country, title, iconWithText, nights, price, description } = data;
     let { handleModal } = useOutletContext();
 
     return (
-        <div className='flex-grow lg:max-w-lg flex flex-col items-center px-6'>
+        <div className='flex-grow lg:max-w-lg flex flex-col items-center px-4'>
             <div className="text-center mb-4">
-                <Heading subTitle={subTitle.toUpperCase().slice(0, 1) + subTitle.slice(1)} title={title} />
+                <Heading subTitle={"Golfsemester till " + country.title} title={title} />
             </div>
 
-            {
-                iconWithText && <DetailsIcons icons={iconWithText} />
-            }
+            <DetailsIcons icons={iconWithText} />
 
-            <h3 className='my-4 text-base font-semibold'>
+            <p className='my-4 text-base font-semibold'>
                 {nights + " nätter från SEK " + price}
-            </h3>
+            </p>
 
             <div className='mt-4 mb-8 text-center text-xs md:text-sm px-8'>
-                {description}
+                <p>
+                    {description ? description : "Pris per person i SEK inkl. hotell med all-inclusive, 3 rundor golf, flyg med resväska, handbagage och golfbag samt privat flygplatstransfer."}
+                </p>
             </div>
 
             <Button onClick={handleModal}>

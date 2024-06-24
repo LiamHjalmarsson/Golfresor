@@ -6,9 +6,9 @@ const Deal = ({ deal }) => {
     let { deal: offer } = deal;
 
     return (
-        <Link to={`/hotels/${deal.slug.current}`} className="group md:max-w-lg md:w-1/4 flex-grow h-60 md:h-72 lg:h-80 relative flex justify-center items-end text-start">
+        <Link to={`/hotels/${deal.slug.current}`} className="group lg:max-w-lg lg:w-1/4 flex-grow h-60 md:h-72 lg:h-80 relative flex justify-center items-end text-start">
             <div className='overflow-hidden h-full w-full '>
-                <img src={urlFor(deal.cardImage.asset).width(600).url()} className='object-cover object-center opacity-90 group-hover:opacity-85 w-full h-full transition duration-300 transform group-hover:scale-110' alt={deal.cardImage.alt} />
+                <img src={urlFor(deal.cardImage.asset).width(600).url()} className='object-cover object-center opacity-80 group-hover:opacity-90 w-full h-full transition duration-500 transform group-hover:scale-110' alt={deal.cardImage.alt} />
             </div>
 
             <div className="absolute -bottom-4 left-0 right-0 px-6 lg:px-12 flex justify-center">
@@ -19,7 +19,7 @@ const Deal = ({ deal }) => {
                     <p className="text-sm md:text-base lg:text-lg lg:mt-2">
                         {offer.description}
                     </p>
-                    <p>
+                    <p className='py-1 px-4 bg-green w-fit mx-auto font-bold text-lg mt-2 text-white tracking-wide'>
                         Spara {offer.price}
                     </p>
                 </div>

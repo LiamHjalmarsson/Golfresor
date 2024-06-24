@@ -32,7 +32,7 @@ const Destination = () => {
                     <>
                         <Hero images={country.headerImages} />
 
-                        <div className='w-full xl:w-full max-w-3xl px-6 md:px-8 mx-auto flex flex-col gap-12 lg:gap-24'>
+                        <div className='w-full xl:w-full max-w-7xl px-4 lg:px-12 mx-auto flex flex-col gap-12'>
                             <DestinationDescription title={country.title} description={country.description} />
                             <HotelsDestinations countryHotels={countryHotels} country={country.title} />
                         </div>

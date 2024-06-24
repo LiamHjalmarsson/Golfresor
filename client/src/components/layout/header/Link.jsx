@@ -10,7 +10,7 @@ const Link = ({ link }) => {
     return (
         <NavLink
             to={`/${url}`}
-            className={`${url === pathname.slice(1) ? "text-orange border-b border-b-orange" : ""} hover:border-b text-lg lg:text-xl tracking-wider transition-colors duration-300`}
+            className={`${url === pathname.slice(1) ? "text-orange border-b border-primary" : ""} hover:border-b hover:border-stone-300 text-primary text-lg lg:text-xl tracking-wider transition-colors duration-300`}
         >
             {link.title}
         </NavLink>

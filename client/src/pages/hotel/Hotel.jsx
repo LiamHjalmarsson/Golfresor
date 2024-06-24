@@ -10,7 +10,22 @@ import Deal from './components/Deal';
 
 const Hotel = () => {
     let { slug } = useParams();
-    let { data } = useFetch(`*[_type == "hotel" && slug.current == "${slug}"][0]`);
+    let { data } = useFetch(`*[_type == "hotel" && slug.current == "${slug}"][0]{
+            images,
+            title,
+            nights,
+            price,
+            deal,
+            description,
+            iconWithText,
+            deal,
+            detailIcons,
+            textBoxes,
+            country->{  
+                title
+            }
+        }`);
+
     let [selectedImage, setSelectedImage] = useState(null);
 
     let handleImageClick = (image) => {
@@ -30,26 +45,20 @@ const Hotel = () => {
                                 deal={data?.deal}
                             />
 
-                            <HotelDetails
-                                subTitle={data.subTitle}
-                                title={data.title}
-                                iconWithText={data.iconWithText}
-                                nights={data.nights}
-                                price={data.price}
-                                deal={data.deal}
-                                description={data.description}
-                            />
+                            <HotelDetails data={data} />
                         </div>
 
                         {
-                            data.deal && <Deal deal={data.deal} /> 
+                            data.deal && <Deal deal={data.deal} />
                         }
 
                         {
                             data.detailIcons && <Icons icons={data.detailIcons} />
                         }
 
-                        <DetailCards cards={data.textBoxes} />
+                        {
+                            data.textBoxes && <DetailCards cards={data.textBoxes} />
+                        }
                     </>
                 )
             }

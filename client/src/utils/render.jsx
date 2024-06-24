@@ -38,16 +38,9 @@ let renderHero = (component) => {
 }
 
 let renderDetailText = (component) => {
-    let { title, subTitle, description, buttonText, image, imageText, link } = component;
     return (
         <DetailText
-            title={title}
-            subTitle={subTitle}
-            description={description}
-            image={image}
-            path={link}
-            bottomText={imageText}
-            buttonText={buttonText}
+            data={component}
         />
     );
 }

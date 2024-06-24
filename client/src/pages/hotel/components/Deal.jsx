@@ -11,12 +11,12 @@ const Deal = ({ deal }) => {
                 {deal.rubrik}
             </h2>
             <div className='my-4 text-lg'>
-                <span>
+                <p className='mb-2'>
                     {deal.description}
-                </span>
-                <span>
-                    spara {deal.price}
-                </span>
+                </p>
+                <p>
+                    Spara {deal.price}
+                </p>
             </div>
             <Button onClick={handleModal}>
                 Kontakta oss

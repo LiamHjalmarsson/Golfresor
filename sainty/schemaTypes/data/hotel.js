@@ -1,4 +1,4 @@
-import { defineType, defineField } from "sanity"
+import { defineType, defineField } from "sanity";
 import { DocumentTextIcon } from '@sanity/icons';
 
 export default defineType({
@@ -11,7 +11,7 @@ export default defineType({
             title: 'Hotel*',
             type: 'string',
             description: "Skriv in namn på hotel",
-            validation: (Rule) => Rule.required()
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "slug",
@@ -21,13 +21,13 @@ export default defineType({
                 source: "title"
             },
             description: "Tryck på knappen för att generera url väg till hotel",
-            validation: (Rule) => Rule.required()
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: "popular",
             title: "Populärt",
             type: "boolean",
-            description: "Krysa i om det är ett populärt hotel"
+            description: "Kryssa i om det är ett populärt hotel",
         }),
         defineField({
             name: "deal",
@@ -35,28 +35,31 @@ export default defineType({
             type: "object",
             description: "Erbjudande information om hotellet",
             fields: [
-                {
+                defineField({
                     name: "isDeal",
                     title: "Är detta ett erbjudande?",
                     type: "boolean",
-                    description: "Kryssa i om det är ett erbjudande hotel"
-                },
-                {
+                    description: "Kryssa i om det är ett erbjudande hotel",
+                }),
+                defineField({
                     name: "rubrik",
-                    title: "rubrik för erbjudande",
+                    title: "Rubrik för erbjudande",
                     type: "string",
-                },
-                {
+                    hidden: ({ parent }) => !parent?.isDeal,
+                }),
+                defineField({
                     name: "description",
-                    title: 'Text som visas med kortet för erbjudande',
-                    type: 'string',
-                },
-                {
+                    title: "Text som visas med kortet för erbjudande",
+                    type: "string",
+                    hidden: ({ parent }) => !parent?.isDeal,
+                }),
+                defineField({
                     name: "price",
-                    title: 'Pris för erbjudande',
-                    type: 'number',
-                },
-            ]
+                    title: "Pris för erbjudande",
+                    type: "number",
+                    hidden: ({ parent }) => !parent?.isDeal,
+                }),
+            ],
         }),
         defineField({
             name: 'country',
@@ -65,7 +68,7 @@ export default defineType({
             to: {
                 type: "country"
             },
-            description: "Välj vilket land som hotelet finns i för att det ska synas på korrekt land"
+            description: "Välj vilket land som hotelet finns i för att det ska synas på korrekt land",
         }),
         defineField({
             name: 'cardImage',
@@ -77,19 +80,22 @@ export default defineType({
             },
             validation: (Rule) => Rule.required(),
             fields: [
-                {
+                defineField({
                     name: 'alt',
                     type: 'string',
                     title: 'Alternativ text*',
-                    description: 'Alt text beskvriver bilden för exempelvis synskadade',
+                    description: 'Alt text beskriver bilden för exempelvis synskadade',
                     validation: (Rule) => Rule.required(),
-                },
-                {
+                    hidden: ({ parent }) => !parent?.image,
+
+                }),
+                defineField({
                     name: "description",
                     title: 'Text som visas med kortet',
                     type: 'string',
-                    description: "skriv in en text som ska visas med kortet lämna tom om det ska stå antal nätter och pris"
-                }
+                    description: "Skriv in en text som ska visas med kortet, lämna tom om det ska stå antal nätter och pris",
+                    hidden: ({ parent }) => !parent?.image,
+                })
             ],
         }),
         defineField({
@@ -99,28 +105,28 @@ export default defineType({
             description: "Alla bilder som finns till hotelet",
             validation: (Rule) => Rule.required(),
             of: [
-                {
+                defineField({
                     type: "image",
                     options: {
                         hotspot: true,
                         metadata: ['lqip', 'palette', 'blurhash'],
                     },
                     fields: [
-                        {
+                        defineField({
                             name: 'alt',
                             type: 'string',
                             title: 'Alternativ text*',
-                            description: 'Alt text beskvriver bilden för exempelvis synskadade',
+                            description: 'Alt text beskriver bilden för exempelvis synskadade',
                             validation: (Rule) => Rule.required(),
-                        }
+                        })
                     ],
-                }
+                })
             ],
         }),
         defineField({
             name: "nights",
             title: "Antal nätter",
-            type: "number"
+            type: "number",
         }),
         defineField({
             name: "price",
@@ -128,14 +134,8 @@ export default defineType({
             type: "number",
         }),
         defineField({
-            name: "subTitle",
-            title: "Under rubrik",
-            description: "Under rubrik visas på hotel sidan ovanför hotel namnet",
-            type: 'string',
-        }),
-        defineField({
             name: 'description',
-            title: 'Beskrivning av land i kort',
+            title: 'Beskrivning av hotel',
             type: 'text',
         }),
         defineField({
@@ -144,71 +144,63 @@ export default defineType({
             type: "array",
             description: "Ikoner med text om flyg/hotel/taxi med mera.",
             of: [
-                {
+                defineField({
                     type: "object",
                     fields: [
-                        {
-                            title: "Icon*",
-                            name: "icon",
-                            type: "iconPicker",
-                            options: {
-                                storeSvg: true
-                            },
-                            validation: Rule => Rule.required(),
-                        },
-                        {
+                        defineField({
+                            type: 'icon.manager',
+                            name: 'icon',
+                            title: 'Icon',
+                        }),
+                        defineField({
                             title: "Text*",
                             name: "text",
                             type: "string",
                             validation: Rule => Rule.required(),
-                        },
+                        }),
                     ],
-                }
+                })
             ]
         }),
         defineField({
             title: "Ikoner med text",
             name: "detailIcons",
             type: "array",
-            description: "Ikoner med text om annat innehåll som golf, spa, hav ",
+            description: "Ikoner med text om annat innehåll som golf, spa, hav",
             of: [
-                {
+                defineField({
                     type: "object",
                     fields: [
-                        {
-                            title: "Icon*",
-                            name: "icon",
-                            type: "iconPicker",
-                            options: {
-                                storeSvg: true
-                            },
-                            validation: Rule => Rule.required(),
-                        },
-                        {
+                        defineField({
+                            type: 'icon.manager',
+                            name: 'icon',
+                            title: 'Icon',
+                        }),
+                        defineField({
                             title: "Text*",
                             name: "text",
                             type: "string",
                             validation: Rule => Rule.required(),
-                        },
+                        }),
                     ],
-                }
+                })
             ]
         }),
         defineField({
             name: 'textBoxes',
             title: 'Informations kort om hotelet',
-            description: "Lägg till innehåll om exempelvis hotelets golf bannor, mat, boende",
+            description: "Lägg till innehåll om exempelvis hotelets golf banor, mat, boende",
             type: 'array',
             of: [
-                {
+                defineField({
                     type: 'object',
                     fields: [
-                        {
+                        defineField({
                             name: 'title',
                             title: 'Rubrik',
-                            type: 'string'
-                        },
-                        {
+                            type: 'string',
+                        }),
+                        defineField({
                             name: 'image',
                             title: 'Image',
                             type: 'image',
@@ -217,24 +209,24 @@ export default defineType({
                                 metadata: ['lqip', 'palette', 'blurhash'],
                             },
                             fields: [
-                                {
+                                defineField({
                                     name: 'alt',
                                     type: 'string',
                                     title: 'Alternativ text',
-                                    description: 'Beskrivande text för bilden'
-                                }
+                                    description: 'Beskrivande text för bilden',
+                                })
                             ]
-                        },
-                        {
+                        }),
+                        defineField({
                             name: 'description',
                             title: 'Text',
-                            type: 'text'
-                        }
+                            type: 'text',
+                        })
                     ],
                     preview: {
                         select: {
                             title: 'title',
-                            media: 'image'
+                            media: 'image',
                         },
                         prepare({ title, media }) {
                             return {
@@ -243,39 +235,7 @@ export default defineType({
                             };
                         }
                     }
-                }
-            ]
-        }),
-        defineField({
-            name: 'priceList',
-            title: 'Pris Lista',
-            type: 'array',
-            of: [
-                {
-                    type: 'object',
-                    fields: [
-                        {
-                            name: 'title',
-                            title: 'Rubrik',
-                            type: 'string'
-                        },
-                        {
-                            name: 'description',
-                            title: 'Text',
-                            type: 'text'
-                        }
-                    ],
-                    preview: {
-                        select: {
-                            title: 'title',
-                        },
-                        prepare({ title }) {
-                            return {
-                                title: title,
-                            };
-                        }
-                    }
-                }
+                })
             ]
         }),
     ],
